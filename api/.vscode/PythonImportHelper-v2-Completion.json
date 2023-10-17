@@ -1,11 +1,26 @@
 [
     {
         "label": "jwt",
-        "kind": 6,
+        "importPath": "jose",
+        "description": "jose",
         "isExtraImport": true,
-        "importPath": "jwt",
-        "description": "jwt",
-        "detail": "jwt",
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
         "documentation": {}
     },
     {
@@ -186,38 +201,6 @@
         "documentation": {}
     },
     {
-        "label": "create_access_token",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "create_refresh_token",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "verify_password",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "get_hashed_password",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
         "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
         "importPath": "utils",
         "description": "utils",
@@ -251,6 +234,38 @@
     },
     {
         "label": "JWT_REFRESH_SECRET_KEY",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_refresh_token",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_hashed_password",
         "importPath": "utils",
         "description": "utils",
         "isExtraImport": true,
@@ -461,14 +476,6 @@
         "documentation": {}
     },
     {
-        "label": "jwt",
-        "importPath": "jose",
-        "description": "jose",
-        "isExtraImport": true,
-        "detail": "jose",
-        "documentation": {}
-    },
-    {
         "label": "CryptContext",
         "importPath": "passlib.context",
         "description": "passlib.context",
@@ -524,7 +531,7 @@
         "kind": 5,
         "importPath": "database",
         "description": "database",
-        "peekOfCode": "url = URL.create(\n    drivername=\"postgresql\",\n    username=\"postgres\",\n    password=\"postgres\",\n    host=\"localhost\",\n    database=\"postgres\",\n    port=5432\n)\n#Create a PostgreSQL engine instance\nengine = create_engine(url)",
+        "peekOfCode": "url = URL.create(\n    drivername=\"postgresql\", username=\"postgres\", password=\"postgres\", host=\"localhost\", database=\"postgres\", port=5432\n)\n# Create a PostgreSQL engine instance\nengine = create_engine(url)\nprint(\"DB Linked...\")\n# Create declarative base meta instance\nBase = declarative_base()\n# Create session local class for session maker\nSessionLocal = sessionmaker(bind=engine, expire_on_commit=False)",
         "detail": "database",
         "documentation": {}
     },
@@ -533,7 +540,7 @@
         "kind": 5,
         "importPath": "database",
         "description": "database",
-        "peekOfCode": "engine = create_engine(url)\nprint(\"DB Linked...\")\n#Create declarative base meta instance\nBase = declarative_base()\n#Create session local class for session maker\nSessionLocal = sessionmaker(bind=engine, expire_on_commit=False)",
+        "peekOfCode": "engine = create_engine(url)\nprint(\"DB Linked...\")\n# Create declarative base meta instance\nBase = declarative_base()\n# Create session local class for session maker\nSessionLocal = sessionmaker(bind=engine, expire_on_commit=False)",
         "detail": "database",
         "documentation": {}
     },
@@ -542,7 +549,7 @@
         "kind": 5,
         "importPath": "database",
         "description": "database",
-        "peekOfCode": "Base = declarative_base()\n#Create session local class for session maker\nSessionLocal = sessionmaker(bind=engine, expire_on_commit=False)",
+        "peekOfCode": "Base = declarative_base()\n# Create session local class for session maker\nSessionLocal = sessionmaker(bind=engine, expire_on_commit=False)",
         "detail": "database",
         "documentation": {}
     },
@@ -614,7 +621,7 @@
         "kind": 6,
         "importPath": "models",
         "description": "models",
-        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True)\n    username = Column(String(50), nullable=False)\n    email = Column(String(100), unique=True, nullable=False)\n    password = Column(String(100), nullable=False)\nclass Token(Base):\n    __tablename__ = \"token\"\n    user_id = Column(Integer)\n    access_token = Column(String(450), primary_key=True)",
+        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True)\n    username = Column(String(64), nullable=False)\n    email = Column(String(128), unique=True, nullable=False)\n    password = Column(String(128), nullable=False)\nclass Token(Base):\n    __tablename__ = \"token\"\n    user_id = Column(Integer)\n    access_token = Column(String(512), primary_key=True)",
         "detail": "models",
         "documentation": {}
     },
@@ -623,7 +630,25 @@
         "kind": 6,
         "importPath": "models",
         "description": "models",
-        "peekOfCode": "class Token(Base):\n    __tablename__ = \"token\"\n    user_id = Column(Integer)\n    access_token = Column(String(450), primary_key=True)\n    refresh_token = Column(String(450), nullable=False)\n    status = Column(Boolean)\n    created_date = Column(DateTime, default=datetime.datetime.now)",
+        "peekOfCode": "class Token(Base):\n    __tablename__ = \"token\"\n    user_id = Column(Integer)\n    access_token = Column(String(512), primary_key=True)\n    refresh_token = Column(String(512), nullable=False)\n    status = Column(Boolean)\n    created_date = Column(DateTime, default=datetime.datetime.now)\nclass Author(Base):\n    __tablename__ = \"author\"\n    id = Column(Integer, primary_key=True)",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Author",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Author(Base):\n    __tablename__ = \"author\"\n    id = Column(Integer, primary_key=True)\n    author_name = Column(String(64), nullable=False)\n    email = Column(String(128), unique=True, nullable=False)\nclass Book(Base):\n    __tablename__ = \"book\"\n    id = Column(Integer, primary_key=True)\n    book_name = Column(String(128), unique=True, nullable=False)\n    page_number = Column(Integer, nullable=False)",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Book",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Book(Base):\n    __tablename__ = \"book\"\n    id = Column(Integer, primary_key=True)\n    book_name = Column(String(128), unique=True, nullable=False)\n    page_number = Column(Integer, nullable=False)\n    author_name = Column(Integer, , nullable=False)",
         "detail": "models",
         "documentation": {}
     },

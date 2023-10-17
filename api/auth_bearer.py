@@ -1,11 +1,15 @@
-import jwt
-
-# from jwt.exceptions import InvalidTokenError
-from fastapi import FastAPI, Depends, HTTPException,status
+from jose import jwt
+from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi import Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from models import Token
-from utils import ACCESS_TOKEN_EXPIRE_MINUTES, REFRESH_TOKEN_EXPIRE_MINUTES, ALGORITHM, JWT_REFRESH_SECRET_KEY, JWT_SECRET_KEY
+from utils import (
+    ACCESS_TOKEN_EXPIRE_MINUTES,
+    REFRESH_TOKEN_EXPIRE_MINUTES,
+    ALGORITHM,
+    JWT_REFRESH_SECRET_KEY,
+    JWT_SECRET_KEY,
+)
 
 
 def decodeJWT(jwtoken: str):
@@ -42,5 +46,6 @@ class JWTBearer(HTTPBearer):
         if payload:
             isTokenValid = True
         return isTokenValid
+
 
 jwt_bearer = JWTBearer()

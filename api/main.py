@@ -1,12 +1,11 @@
 import schemas
 import models
-import jwt
+from jose import jwt
 from models import User, Token
 from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from auth_bearer import JWTBearer
 from functools import wraps
-from utils import create_access_token, create_refresh_token, verify_password, get_hashed_password
 from database import Base, engine, SessionLocal
 from sqlalchemy.orm import session
 from datetime import datetime
@@ -16,6 +15,10 @@ from utils import (
     ALGORITHM,
     JWT_SECRET_KEY,
     JWT_REFRESH_SECRET_KEY,
+    create_access_token,
+    create_refresh_token,
+    verify_password,
+    get_hashed_password,
 )
 
 
