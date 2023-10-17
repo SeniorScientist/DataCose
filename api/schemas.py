@@ -1,10 +1,14 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 import datetime
 
-class User(BaseModel):
+class UserCreate(BaseModel):
     username: str
-    email: str
-    password: str
+    email: str = Field(..., description="user email")
+    password: str = Field(..., min_length=5, max_length=24, description="user password")
+
+class UserLogin(BaseModel):
+    email: str = Field(..., description="user email")
+    password: str = Field(..., min_length=5, max_length=24, description="user password")
 
 class TokenSchema(BaseModel):
     access_token: str

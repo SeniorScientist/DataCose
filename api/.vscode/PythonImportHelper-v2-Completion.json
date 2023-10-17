@@ -1,0 +1,765 @@
+[
+    {
+        "label": "jwt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jwt",
+        "description": "jwt",
+        "detail": "jwt",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPAuthorizationCredentials",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "models",
+        "description": "models",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "REFRESH_TOKEN_EXPIRE_MINUTES",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_REFRESH_SECRET_KEY",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_SECRET_KEY",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_refresh_token",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_hashed_password",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "REFRESH_TOKEN_EXPIRE_MINUTES",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_SECRET_KEY",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_REFRESH_SECRET_KEY",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "importPath": "sqlalchemy.engine",
+        "description": "sqlalchemy.engine",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.engine",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "schemas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "schemas",
+        "description": "schemas",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "JWTBearer",
+        "importPath": "auth_bearer",
+        "description": "auth_bearer",
+        "isExtraImport": true,
+        "detail": "auth_bearer",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionLocal",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "CryptContext",
+        "importPath": "passlib.context",
+        "description": "passlib.context",
+        "isExtraImport": true,
+        "detail": "passlib.context",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "JWTBearer",
+        "kind": 6,
+        "importPath": "auth_bearer",
+        "description": "auth_bearer",
+        "peekOfCode": "class JWTBearer(HTTPBearer):\n    def __init__(self, auto_error: bool = True):\n        super(JWTBearer, self).__init__(auto_error=auto_error)\n    async def __call__(self, request: Request):\n        credentials: HTTPAuthorizationCredentials = await super(JWTBearer, self).__call__(request)\n        if credentials:\n            if not credentials.scheme == \"Bearer\":\n                raise HTTPException(status_code=403, detail=\"Invalid authentication scheme.\")\n            if not self.verify_jwt(credentials.credentials):\n                raise HTTPException(status_code=403, detail=\"Invalid token or expired token.\")",
+        "detail": "auth_bearer",
+        "documentation": {}
+    },
+    {
+        "label": "decodeJWT",
+        "kind": 2,
+        "importPath": "auth_bearer",
+        "description": "auth_bearer",
+        "peekOfCode": "def decodeJWT(jwtoken: str):\n    try:\n        # Decode and verify the token\n        payload = jwt.decode(jwtoken, JWT_SECRET_KEY, ALGORITHM)\n        return payload\n    except jwt.InvalidTokenError:\n        return None\nclass JWTBearer(HTTPBearer):\n    def __init__(self, auto_error: bool = True):\n        super(JWTBearer, self).__init__(auto_error=auto_error)",
+        "detail": "auth_bearer",
+        "documentation": {}
+    },
+    {
+        "label": "jwt_bearer",
+        "kind": 5,
+        "importPath": "auth_bearer",
+        "description": "auth_bearer",
+        "peekOfCode": "jwt_bearer = JWTBearer()",
+        "detail": "auth_bearer",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "database",
+        "description": "database",
+        "peekOfCode": "url = URL.create(\n    drivername=\"postgresql\",\n    username=\"postgres\",\n    password=\"postgres\",\n    host=\"localhost\",\n    database=\"postgres\",\n    port=5432\n)\n#Create a PostgreSQL engine instance\nengine = create_engine(url)",
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "database",
+        "description": "database",
+        "peekOfCode": "engine = create_engine(url)\nprint(\"DB Linked...\")\n#Create declarative base meta instance\nBase = declarative_base()\n#Create session local class for session maker\nSessionLocal = sessionmaker(bind=engine, expire_on_commit=False)",
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "database",
+        "description": "database",
+        "peekOfCode": "Base = declarative_base()\n#Create session local class for session maker\nSessionLocal = sessionmaker(bind=engine, expire_on_commit=False)",
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "SessionLocal",
+        "kind": 5,
+        "importPath": "database",
+        "description": "database",
+        "peekOfCode": "SessionLocal = sessionmaker(bind=engine, expire_on_commit=False)",
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "get_session",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_session():\n    session = SessionLocal()\n    try:\n        yield session\n    finally:\n        session.close()\napp = FastAPI()\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "read_root",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def read_root():\n    return {\"Hello\": \"World\"}\n@app.post(\"/register\")\ndef register_user(user: schemas.UserCreate, session: session = Depends(get_session)):\n    existing_user = session.query(models.User).filter_by(email=user.email).first()\n    if existing_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    encrypted_password = get_hashed_password(user.password)\n    new_user = models.User(username=user.username, email=user.email, password=encrypted_password)\n    session.add(new_user)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "register_user",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def register_user(user: schemas.UserCreate, session: session = Depends(get_session)):\n    existing_user = session.query(models.User).filter_by(email=user.email).first()\n    if existing_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    encrypted_password = get_hashed_password(user.password)\n    new_user = models.User(username=user.username, email=user.email, password=encrypted_password)\n    session.add(new_user)\n    session.commit()\n    session.refresh(new_user)\n    return {\"message\": \"user created successfully\"}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def login(request: schemas.UserLogin, db: session = Depends(get_session)):\n    user = db.query(User).filter(User.email == request.email).first()\n    if user is None:\n        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Incorrect email\")\n    hashed_pass = user.password\n    if not verify_password(request.password, hashed_pass):\n        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Incorrect password\")\n    access = create_access_token(user.id)\n    refresh = create_refresh_token(user.id)\n    token_db = models.Token(user_id=user.id, access_token=access, refresh_token=refresh, status=True)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def logout(dependencies=Depends(JWTBearer()), db: session = Depends(get_session)):\n    token = dependencies\n    payload = jwt.decode(token, JWT_SECRET_KEY, ALGORITHM)\n    user_id = payload[\"sub\"]\n    token_record = db.query(models.Token).all()\n    info = []\n    for record in token_record:\n        print(\"record\", record)\n        if (datetime.utcnow() - record.created_date).days > 1:\n            info.append(record.user_id)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = FastAPI()\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n@app.post(\"/register\")\ndef register_user(user: schemas.UserCreate, session: session = Depends(get_session)):\n    existing_user = session.query(models.User).filter_by(email=user.email).first()\n    if existing_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    encrypted_password = get_hashed_password(user.password)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True)\n    username = Column(String(50), nullable=False)\n    email = Column(String(100), unique=True, nullable=False)\n    password = Column(String(100), nullable=False)\nclass Token(Base):\n    __tablename__ = \"token\"\n    user_id = Column(Integer)\n    access_token = Column(String(450), primary_key=True)",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "kind": 6,
+        "importPath": "models",
+        "description": "models",
+        "peekOfCode": "class Token(Base):\n    __tablename__ = \"token\"\n    user_id = Column(Integer)\n    access_token = Column(String(450), primary_key=True)\n    refresh_token = Column(String(450), nullable=False)\n    status = Column(Boolean)\n    created_date = Column(DateTime, default=datetime.datetime.now)",
+        "detail": "models",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class UserCreate(BaseModel):\n    username: str\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass UserLogin(BaseModel):\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserLogin",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class UserLogin(BaseModel):\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str\nclass TokenCreate(BaseModel):\n    user_id: str\n    access_token: str\n    refresh_token: str",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenSchema",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str\nclass TokenCreate(BaseModel):\n    user_id: str\n    access_token: str\n    refresh_token: str\n    status: bool\n    created_date: datetime.datetime",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenCreate",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class TokenCreate(BaseModel):\n    user_id: str\n    access_token: str\n    refresh_token: str\n    status: bool\n    created_date: datetime.datetime",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "get_hashed_password",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode = {\"exp\": expires_delta, \"sub\": str(subject)}",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode = {\"exp\": expires_delta, \"sub\": str(subject)}\n    encoded_jwt = jwt.encode(to_encode, JWT_SECRET_KEY, ALGORITHM)\n    return encoded_jwt",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)\n    to_encode = {\"exp\": expires_delta, \"sub\": str(subject)}\n    encoded_jwt = jwt.encode(to_encode, JWT_SECRET_KEY, ALGORITHM)\n    return encoded_jwt\ndef create_refresh_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_refresh_token",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def create_refresh_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=REFRESH_TOKEN_EXPIRE_MINUTES)\n    to_encode = {\"exp\": expires_delta, \"sub\": str(subject)}\n    encoded_jwt = jwt.encode(to_encode, JWT_REFRESH_SECRET_KEY, ALGORITHM)\n    return encoded_jwt\ndef token_required(func):\n    @wraps(func)",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "token_required",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def token_required(func):\n    @wraps(func)\n    def wrapper(*args, **kwargs):\n        payload = jwt.decode(kwargs[\"dependencies\"], JWT_SECRET_KEY, ALGORITHM)\n        user_id = payload[\"sub\"]\n        data = (\n            kwargs[\"session\"]\n            .query(models.TokenTable)\n            .filter_by(user_id=user_id, access_token=kwargs[\"dependencies\"], status=True)\n            .first()",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "ACCESS_TOKEN_EXPIRE_MINUTES = 30  # 30 minutes\nREFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days\nALGORITHM = \"HS256\"\nJWT_SECRET_KEY = \"filipnowak@$@&^@&%^&AbcDeFGH\"  # should be kept secret\nJWT_REFRESH_SECRET_KEY = \"senior@#$%^@&1234567890\"\npassword_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "REFRESH_TOKEN_EXPIRE_MINUTES",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7  # 7 days\nALGORITHM = \"HS256\"\nJWT_SECRET_KEY = \"filipnowak@$@&^@&%^&AbcDeFGH\"  # should be kept secret\nJWT_REFRESH_SECRET_KEY = \"senior@#$%^@&1234567890\"\npassword_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "ALGORITHM = \"HS256\"\nJWT_SECRET_KEY = \"filipnowak@$@&^@&%^&AbcDeFGH\"  # should be kept secret\nJWT_REFRESH_SECRET_KEY = \"senior@#$%^@&1234567890\"\npassword_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_SECRET_KEY",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "JWT_SECRET_KEY = \"filipnowak@$@&^@&%^&AbcDeFGH\"  # should be kept secret\nJWT_REFRESH_SECRET_KEY = \"senior@#$%^@&1234567890\"\npassword_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_REFRESH_SECRET_KEY",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "JWT_REFRESH_SECRET_KEY = \"senior@#$%^@&1234567890\"\npassword_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "password_context",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "password_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)",
+        "detail": "utils",
+        "documentation": {}
+    }
+]
