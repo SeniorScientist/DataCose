@@ -21,6 +21,7 @@ export default {
             { name: 'format-detection', content: 'telephone=no' },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
@@ -44,6 +45,8 @@ export default {
         ['bootstrap-vue/nuxt', { icons: true, css: true }],
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
+        '@nuxtjs/auth',
+        // '@nuxtjs/toast'
     ],
 
     publicRuntimeConfig: {
@@ -56,6 +59,39 @@ export default {
     axios: {
         // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
         baseURL: process.env.NODE_ENV == 'development' ? 'http://127.0.0.1:8000' : process.env.BASEURL,
+    },
+
+    // toast: {
+    //     position: 'top-right',
+    //     duration: 2000
+    // },
+
+    // Loading module configuration: https://go.nuxtjs.dev/config-loading
+    loading: {
+        name: 'chasing-dots',
+        color: '#ff5638',
+        background: 'white',
+        height: '4px'
+    },
+
+    // Auth module configuration: https://go.nuxtjs.dev/config-auth
+    auth: {
+        strategies: {
+            local: {
+                endpoints: {
+                    login: { url: '/user/login', method: 'post', propertyName: 'token' },
+                    logout: false,
+                    user: { url: '/user/user', method: 'get', propertyName: 'data' },
+                },
+                tokenRequired: true,
+                tokenType: 'Bearer'
+            }
+        },
+        redirect: {
+            login: '/?login=1',
+            logout: '/',
+            callback: '/'
+        }
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
