@@ -1,42 +1,32 @@
 <template>
     <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-4 is-offset-4">
-                    <h2 class="title has-text-centered">Welcome back!</h2>
+        <h2 class="title has-text-centered">Welcome back!</h2>
 
-                    <Notification :message="error" v-if="error" />
+        <Notification :message="error" v-if="error" />
 
-                    <form method="post" @submit.prevent="login">
-                        <div class="field">
-                            <label class="label">Email</label>
-                            <div class="control">
-                                <input type="email" class="input" name="email" v-model="email" />
-                            </div>
-                        </div>
-                        <div class="field">
-                            <label class="label">Password</label>
-                            <div class="control">
-                                <input type="password" class="input" name="password" v-model="password" />
-                            </div>
-                        </div>
-                        <div class="control">
-                            <button type="submit" class="button is-dark is-fullwidth">Log In</button>
-                        </div>
-                    </form>
-                    <div class="has-text-centered" style="margin-top: 20px">
-                        <p>
-                            Don't have an account? <nuxt-link to="/register">Register</nuxt-link>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <b-form @submit="login">
+            <b-form-group id="input-group-email" label="Email address:" label-for="input-email"
+                description="We'll never share your email with anyone else.">
+                <b-form-input id="input-email" v-model="credentials.email" type="email" placeholder="Enter email"
+                    required />
+            </b-form-group>
+
+            <b-form-group id="input-group-pwd" label="Your Password:" label-for="input-pwd">
+                <b-form-input id="input-pwd" type="password" v-model="credentials.password"
+                    placeholder="Enter your password" required />
+            </b-form-group>
+
+            <b-form-group id="input-group-confirm">
+                <b-button variant="primary" type="submit">Primary</b-button>
+            </b-form-group>
+        </b-form>
     </section>
 </template>
   
 <script lang="ts">
-import Notification from '~/components/Notification'
+import Notification from "~/components/Notification.vue"
+import { Credentials } from "~/types/auth"
+
 
 export default {
     components: {
@@ -44,26 +34,35 @@ export default {
     },
 
     data() {
-        return {
+        const credentials: Credentials = {
             email: '',
             password: '',
-            error: null
+        }
+
+        const error = ''
+
+        return {
+            credentials,
+            error
         }
     },
 
     methods: {
         async login() {
             try {
-                await this.$auth.loginWith('local', {
+                const response = await this.$auth.loginWith('local', {
                     data: {
-                        email: this.email,
-                        password: this.password
+                        email: this.credentials.email,
+                        password: this.credentials.password
                     }
                 })
 
-                this.$router.push('/')
+                // await this.$auth.setUserToken(response.data.access_token, response.data.refresh_token)
+                this.$toast.success('Logged In!')
+                this.$router.push({ path: "/home" })
             } catch (e) {
-                this.error = e.response.data.message
+                console.log('error type', JSON.stringify(e))
+                this.error = JSON.stringify(e)
             }
         }
     }

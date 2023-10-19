@@ -45,8 +45,8 @@ export default {
         ['bootstrap-vue/nuxt', { icons: true, css: true }],
         // https://go.nuxtjs.dev/axios
         '@nuxtjs/axios',
-        '@nuxtjs/auth',
-        // '@nuxtjs/toast'
+        '@nuxtjs/auth-next',
+        '@nuxtjs/toast'
     ],
 
     publicRuntimeConfig: {
@@ -61,10 +61,22 @@ export default {
         baseURL: process.env.NODE_ENV == 'development' ? 'http://127.0.0.1:8000' : process.env.BASEURL,
     },
 
-    // toast: {
-    //     position: 'top-right',
-    //     duration: 2000
-    // },
+    router: {
+        middleware: ['auth']
+    },
+
+    toast: {
+        position: 'top-right',
+        register: [ // Register custom toasts
+            {
+                name: 'my-error',
+                message: 'Oops...Something went wrong',
+                options: {
+                    type: 'error'
+                }
+            }
+        ]
+    },
 
     // Loading module configuration: https://go.nuxtjs.dev/config-loading
     loading: {
@@ -74,26 +86,47 @@ export default {
         height: '4px'
     },
 
-    // Auth module configuration: https://go.nuxtjs.dev/config-auth
     auth: {
         strategies: {
             local: {
-                endpoints: {
-                    login: { url: '/user/login', method: 'post', propertyName: 'token' },
-                    logout: false,
-                    user: { url: '/user/user', method: 'get', propertyName: 'data' },
+                scheme: 'refresh',
+                autoLogout: true,
+                token: {
+                    property: 'access_token',
+                    maxAge: 1800,
+                    global: true,
+                    type: 'Bearer'
                 },
+                property: 'refresh_token',
+                refreshToken: {
+                    data: 'refresh_token',
+                    maxAge: 60 * 60 * 24 * 30
+                },
+                endpoints: {
+                    login: {
+                        url: '/auth/login',
+                        method: 'post',
+                        propertyName: 'data.access_token',
+                    },
+                    refresh: { url: '/auth/refresh', method: 'post' },
+                    logout: { url: '/auth/logout', method: 'post', },
+                    user: false,
+                },
+                user: {
+                    property: false
+                },
+                autoFetchUser: false,
                 tokenRequired: true,
-                tokenType: 'Bearer'
             }
         },
-        redirect: {
-            login: '/?login=1',
-            logout: '/',
-            callback: '/'
-        }
+        // redirect: {
+        //     logout: '/',
+        //     callback: '/callback'
+        // }
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {},
+    build: {
+        transpile: ['@nuxtjs/auth-next']
+    },
 };
