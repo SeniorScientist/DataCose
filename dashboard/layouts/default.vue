@@ -1,7 +1,9 @@
 <template>
-  <b-container fluid>
+  <b-container>
     <NavBar />
-    <nuxt />
+    <div class="flex p-4 items-center justify-center">
+      <nuxt />
+    </div>
   </b-container>
 </template>
 

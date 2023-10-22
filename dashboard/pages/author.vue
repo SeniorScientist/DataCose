@@ -1,43 +1,30 @@
 <template>
     <section class="section">
-        <b-container>
-            <b-row>
-                <b-col cols="4">
-                    <b-form-input v-model="keyword" placeholder="Enter your name"></b-form-input>
-                </b-col>
-                <b-col>
-                    <b-button variant="danger">Add new author</b-button>
-                </b-col>
-            </b-row>
-
-            <b-row>
-                <b-table 
-                  striped 
-                  hover 
-                  :items="items" 
-                  :busy="isBusy" 
-                  select-mode="single" 
-                  selectable
-                  outlined
-                  @row-selected="onRowSelected" >
-                    <template #table-busy>
-                        <div class="text-center text-danger my-2">
-                            <b-spinner class="align-middle"></b-spinner>
-                            <strong>Loading...</strong>
-                        </div>
-                    </template>
-                </b-table>
-                <Pagination :page-count=pageCount :page-number=pageNumber />
-            </b-row>
-            <b-button v-b-modal.modal-prevent-closing>Open Modal</b-button>
-            <AuthorModal />
-        </b-container>
-    </section>
+        <b-row class="mb-2 justify-center">
+            <b-form-input v-model="keyword" placeholder="Enter your name" class="mr-2"></b-form-input>
+            <b-button v-b-modal.modal-author variant="danger">Add new author</b-button>
+        </b-row>
+    
+        <b-row>
+            <b-table striped hover :items="items" :busy="isBusy" select-mode="single" selectable outlined @row-selected="onRowSelected">
+                <template #table-busy>
+              <div class="text-center text-danger my-2">
+                <b-spinner class="align-middle"></b-spinner>
+                <strong>Loading...</strong>
+              </div>
+</template>
+      </b-table>
+      <Pagination :page-count=pageNumbers :page-number=currentPage />
+    </b-row>
+    <AuthorModal :author="selected" />
+  </section>
 </template>
 
 <script lang="ts">
 import Pagination from "~/components/Pagination.vue"
-import { BookRow } from "~/types/base"
+import { AuthorRow, BookRow } from "~/types/base"
+import { AuthorResponse } from "~/types/interface"
+
 
 export default {
     components: {
@@ -45,23 +32,35 @@ export default {
     },
     data() {
         return {
-            selected: {},
-            pageCount: 5,
-            pageNumber: 1,
-            isBusy: false,
-            items: [
-                { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-                { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-                { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-                { age: 38, first_name: 'Jami', last_name: 'Carney' }
-            ],
+            selected: -1,
+            pageNumbers: 5,
+            pageNumberCount: 10,
+            currentPage: 1,
+            isBusy: true,
+            items: [],
             keyword: ''
+        }
+    },
+    async created() {
+        try {
+            const res: AuthorResponse = (await this.$axios.post("/authors", {
+                item_count: this.pageNumberCount,
+                page_number: 0
+            }));
+            this.isBusy = true
+            console.log('author', JSON.stringify(res))
+            this.pageNumbers = res.pageCount
+            this.items = res.list
+        } catch (e) {
+
         }
     },
     methods: {
         onRowSelected(items: BookRow) {
-            this.selected = items
+            // this.selected = items
+            // this.$refs['modal-author'].show()
         },
     }
+
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-navbar type="dark" variant="success" toggleable="lg">
-      <b-navbar-brand href="/">Nuxt Auth</b-navbar-brand>
+    <b-navbar type="dark" variant="success" toggleable="lg" fixed>
+      <b-navbar-brand href="/">Data Cose</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -10,13 +10,13 @@
           <b-nav-item href="#">
             <nuxt-link class="navbar-item" to="/author">Authors</nuxt-link>
           </b-nav-item>
-          <b-nav-item href="#" disabled>
+          <b-nav-item href="#">
             <nuxt-link class="navbar-item" to="/book">Books</nuxt-link>
           </b-nav-item>
         </b-navbar-nav>
 
-        <b-navbar-nav right v-if="loggedIn">
-          <nuxt-link class="navbar-item" to="/register">Log out</nuxt-link>
+        <b-navbar-nav v-if="loggedIn" right>
+          <nuxt-link class="navbar-item" to="/">Log out</nuxt-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -26,6 +26,7 @@
 <script lang="ts">
 
 export default {
+  name: 'NavBar',
   data() {
     const loggedIn: Boolean = this.$auth.loggedIn || false
     return {
@@ -35,7 +36,7 @@ export default {
 
   watch: {
     loggedIn(newQuestion, oldQuestion) {
-      if (newQuestion) {
+      if (newQuestion !== oldQuestion) {
         this.loggedIn = this.$auth.loggedIn
       }
     }

@@ -120,14 +120,6 @@
         "documentation": {}
     },
     {
-        "label": "OAuth2PasswordBearer",
-        "importPath": "fastapi.security",
-        "description": "fastapi.security",
-        "isExtraImport": true,
-        "detail": "fastapi.security",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "kind": 6,
         "isExtraImport": true,
@@ -201,22 +193,6 @@
         "documentation": {}
     },
     {
-        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "REFRESH_TOKEN_EXPIRE_MINUTES",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
         "label": "ALGORITHM",
         "importPath": "utils",
         "description": "utils",
@@ -226,14 +202,6 @@
     },
     {
         "label": "JWT_SECRET_KEY",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "JWT_REFRESH_SECRET_KEY",
         "importPath": "utils",
         "description": "utils",
         "isExtraImport": true,
@@ -281,6 +249,22 @@
         "documentation": {}
     },
     {
+        "label": "func",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "select",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "Column",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -321,6 +305,14 @@
         "documentation": {}
     },
     {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
         "label": "URL",
         "importPath": "sqlalchemy.engine",
         "description": "sqlalchemy.engine",
@@ -338,6 +330,14 @@
     },
     {
         "label": "session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
         "importPath": "sqlalchemy.orm",
         "description": "sqlalchemy.orm",
         "isExtraImport": true,
@@ -367,22 +367,6 @@
         "description": "auth_bearer",
         "isExtraImport": true,
         "detail": "auth_bearer",
-        "documentation": {}
-    },
-    {
-        "label": "wraps",
-        "importPath": "functools",
-        "description": "functools",
-        "isExtraImport": true,
-        "detail": "functools",
-        "documentation": {}
-    },
-    {
-        "label": "wraps",
-        "importPath": "functools",
-        "description": "functools",
-        "isExtraImport": true,
-        "detail": "functools",
         "documentation": {}
     },
     {
@@ -451,6 +435,38 @@
         "documentation": {}
     },
     {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "Page",
+        "importPath": "fastapi_pagination",
+        "description": "fastapi_pagination",
+        "isExtraImport": true,
+        "detail": "fastapi_pagination",
+        "documentation": {}
+    },
+    {
+        "label": "add_pagination",
+        "importPath": "fastapi_pagination",
+        "description": "fastapi_pagination",
+        "isExtraImport": true,
+        "detail": "fastapi_pagination",
+        "documentation": {}
+    },
+    {
+        "label": "paginate",
+        "importPath": "fastapi_pagination",
+        "description": "fastapi_pagination",
+        "isExtraImport": true,
+        "detail": "fastapi_pagination",
+        "documentation": {}
+    },
+    {
         "label": "BaseModel",
         "importPath": "pydantic",
         "description": "pydantic",
@@ -464,6 +480,14 @@
         "description": "pydantic",
         "isExtraImport": true,
         "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
         "documentation": {}
     },
     {
@@ -567,7 +591,16 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def get_session():\n    session = SessionLocal()\n    try:\n        yield session\n    finally:\n        session.close()\napp = FastAPI()\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}",
+        "peekOfCode": "def get_session():\n    session = SessionLocal()\n    try:\n        yield session\n    finally:\n        session.close()\ndef get_count(q):\n    count_q = q.statement.order_by(None)\n    count = q.session.execute(count_q).scalar()\n    return count",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_count",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_count(q):\n    count_q = q.statement.order_by(None)\n    count = q.session.execute(count_q).scalar()\n    return count\n@app.get(\"/\")\ndef read_root() -> str:\n    return {\"Hello World\"}\n@app.post(\"/auth/register\")\ndef register_user(user: schemas.UserCreate, session: session = Depends(get_session)) -> str:\n    existing_user = session.query(models.User).filter_by(email=user.email).first()",
         "detail": "main",
         "documentation": {}
     },
@@ -576,7 +609,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def read_root():\n    return {\"Hello\": \"World\"}\n@app.post(\"/register\")\ndef register_user(user: schemas.UserCreate, session: session = Depends(get_session)):\n    existing_user = session.query(models.User).filter_by(email=user.email).first()\n    if existing_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    encrypted_password = get_hashed_password(user.password)\n    new_user = models.User(username=user.username, email=user.email, password=encrypted_password)\n    session.add(new_user)",
+        "peekOfCode": "def read_root() -> str:\n    return {\"Hello World\"}\n@app.post(\"/auth/register\")\ndef register_user(user: schemas.UserCreate, session: session = Depends(get_session)) -> str:\n    existing_user = session.query(models.User).filter_by(email=user.email).first()\n    if existing_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    encrypted_password = get_hashed_password(user.password)\n    new_user = models.User(username=user.username, email=user.email, password=encrypted_password)\n    session.add(new_user)",
         "detail": "main",
         "documentation": {}
     },
@@ -585,7 +618,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def register_user(user: schemas.UserCreate, session: session = Depends(get_session)):\n    existing_user = session.query(models.User).filter_by(email=user.email).first()\n    if existing_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    encrypted_password = get_hashed_password(user.password)\n    new_user = models.User(username=user.username, email=user.email, password=encrypted_password)\n    session.add(new_user)\n    session.commit()\n    session.refresh(new_user)\n    return {\"message\": \"user created successfully\"}",
+        "peekOfCode": "def register_user(user: schemas.UserCreate, session: session = Depends(get_session)) -> str:\n    existing_user = session.query(models.User).filter_by(email=user.email).first()\n    if existing_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    encrypted_password = get_hashed_password(user.password)\n    new_user = models.User(username=user.username, email=user.email, password=encrypted_password)\n    session.add(new_user)\n    session.commit()\n    session.refresh(new_user)\n    return {\"user created successfully\"}",
         "detail": "main",
         "documentation": {}
     },
@@ -594,7 +627,16 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def login(request: schemas.UserLogin, db: session = Depends(get_session)):\n    user = db.query(User).filter(User.email == request.email).first()\n    if user is None:\n        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Incorrect email\")\n    hashed_pass = user.password\n    if not verify_password(request.password, hashed_pass):\n        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Incorrect password\")\n    access = create_access_token(user.id)\n    refresh = create_refresh_token(user.id)\n    token_db = models.Token(user_id=user.id, access_token=access, refresh_token=refresh, status=True)",
+        "peekOfCode": "def login(request: schemas.UserLogin, db: session = Depends(get_session)) -> schemas.LoginRes:\n    user = db.query(User).filter(User.email == request.email).first()\n    if user is None:\n        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Incorrect email\")\n    hashed_pass = user.password\n    if not verify_password(request.password, hashed_pass):\n        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=\"Incorrect password\")\n    access = create_access_token(user.id)\n    refresh = create_refresh_token(user.id)\n    token_db = models.Token(user_id=user.id, access_token=access, refresh_token=refresh, status=True)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "refresh",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def refresh(dependencies=Depends(JWTBearer()), db: session = Depends(get_session)):\n    token = dependencies\n    payload = jwt.decode(token, JWT_SECRET_KEY, ALGORITHM)\n    user_id = payload[\"sub\"]\n    token_record = db.query(models.Token).all()\n    info = []\n    for record in token_record:\n        print(\"record\", record)\n        if (datetime.utcnow() - record.created_date).days > 1:\n            info.append(record.user_id)",
         "detail": "main",
         "documentation": {}
     },
@@ -608,11 +650,20 @@
         "documentation": {}
     },
     {
+        "label": "origins",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "origins = [\"http://127.0.0.1:3000\", \"http://localhost:3000\"]\napp = FastAPI()\nadd_pagination(app)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
         "label": "app",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = FastAPI()\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n@app.post(\"/register\")\ndef register_user(user: schemas.UserCreate, session: session = Depends(get_session)):\n    existing_user = session.query(models.User).filter_by(email=user.email).first()\n    if existing_user:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    encrypted_password = get_hashed_password(user.password)",
+        "peekOfCode": "app = FastAPI()\nadd_pagination(app)\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\nBase.metadata.create_all(engine)",
         "detail": "main",
         "documentation": {}
     },
@@ -630,7 +681,7 @@
         "kind": 6,
         "importPath": "models",
         "description": "models",
-        "peekOfCode": "class Token(Base):\n    __tablename__ = \"token\"\n    user_id = Column(Integer)\n    access_token = Column(String(512), primary_key=True)\n    refresh_token = Column(String(512), nullable=False)\n    status = Column(Boolean)\n    created_date = Column(DateTime, default=datetime.datetime.now)\nclass Author(Base):\n    __tablename__ = \"author\"\n    id = Column(Integer, primary_key=True)",
+        "peekOfCode": "class Token(Base):\n    __tablename__ = \"token\"\n    user_id = Column(Integer)\n    access_token = Column(String(512), primary_key=True)\n    refresh_token = Column(String(512), nullable=False)\n    status = Column(Boolean)\n    created_date = Column(DateTime, default=datetime.datetime.now)\nclass Author(Base):\n    __tablename__ = \"author\"\n    id = Column(Integer, primary_key=True, index=True)",
         "detail": "models",
         "documentation": {}
     },
@@ -639,7 +690,7 @@
         "kind": 6,
         "importPath": "models",
         "description": "models",
-        "peekOfCode": "class Author(Base):\n    __tablename__ = \"author\"\n    id = Column(Integer, primary_key=True)\n    author_name = Column(String(64), nullable=False)\n    email = Column(String(128), unique=True, nullable=False)\nclass Book(Base):\n    __tablename__ = \"book\"\n    id = Column(Integer, primary_key=True)\n    book_name = Column(String(128), unique=True, nullable=False)\n    page_number = Column(Integer, nullable=False)",
+        "peekOfCode": "class Author(Base):\n    __tablename__ = \"author\"\n    id = Column(Integer, primary_key=True, index=True)\n    author_name = Column(String(64), index=True, nullable=False)\n    email = Column(String(128), unique=True, nullable=False)\n    books = relationship(\"Book\", back_populates=\"author\")\nclass Book(Base):\n    __tablename__ = \"book\"\n    id = Column(Integer, primary_key=True, index=True)\n    book_name = Column(String(128), unique=True, index=True, nullable=False)",
         "detail": "models",
         "documentation": {}
     },
@@ -648,7 +699,7 @@
         "kind": 6,
         "importPath": "models",
         "description": "models",
-        "peekOfCode": "class Book(Base):\n    __tablename__ = \"book\"\n    id = Column(Integer, primary_key=True)\n    book_name = Column(String(128), unique=True, nullable=False)\n    page_number = Column(Integer, nullable=False)\n    author_name = Column(Integer, , nullable=False)",
+        "peekOfCode": "class Book(Base):\n    __tablename__ = \"book\"\n    id = Column(Integer, primary_key=True, index=True)\n    book_name = Column(String(128), unique=True, index=True, nullable=False)\n    page_number = Column(Integer, nullable=False)\n    author_id = Column(Integer, ForeignKey(\"author.id\"), nullable=False)\n    author = relationship(\"Author\", back_populates=\"books\")",
         "detail": "models",
         "documentation": {}
     },
@@ -657,7 +708,7 @@
         "kind": 6,
         "importPath": "schemas",
         "description": "schemas",
-        "peekOfCode": "class UserCreate(BaseModel):\n    username: str\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass UserLogin(BaseModel):\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str",
+        "peekOfCode": "class UserCreate(BaseModel):\n    username: str\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass UserLogin(BaseModel):\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass LoginRes(BaseModel):\n    access_token: str\n    refresh_token: str",
         "detail": "schemas",
         "documentation": {}
     },
@@ -666,7 +717,16 @@
         "kind": 6,
         "importPath": "schemas",
         "description": "schemas",
-        "peekOfCode": "class UserLogin(BaseModel):\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str\nclass TokenCreate(BaseModel):\n    user_id: str\n    access_token: str\n    refresh_token: str",
+        "peekOfCode": "class UserLogin(BaseModel):\n    email: str = Field(..., description=\"user email\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass LoginRes(BaseModel):\n    access_token: str\n    refresh_token: str\n    token_type: str\nclass TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LoginRes",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class LoginRes(BaseModel):\n    access_token: str\n    refresh_token: str\n    token_type: str\nclass TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str\nclass TokenCreate(BaseModel):\n    user_id: str\n    access_token: str",
         "detail": "schemas",
         "documentation": {}
     },
@@ -675,7 +735,7 @@
         "kind": 6,
         "importPath": "schemas",
         "description": "schemas",
-        "peekOfCode": "class TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str\nclass TokenCreate(BaseModel):\n    user_id: str\n    access_token: str\n    refresh_token: str\n    status: bool\n    created_date: datetime.datetime",
+        "peekOfCode": "class TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str\nclass TokenCreate(BaseModel):\n    user_id: str\n    access_token: str\n    refresh_token: str\n    status: bool\n    created_date: datetime.datetime\nclass List(BaseModel):",
         "detail": "schemas",
         "documentation": {}
     },
@@ -684,7 +744,25 @@
         "kind": 6,
         "importPath": "schemas",
         "description": "schemas",
-        "peekOfCode": "class TokenCreate(BaseModel):\n    user_id: str\n    access_token: str\n    refresh_token: str\n    status: bool\n    created_date: datetime.datetime",
+        "peekOfCode": "class TokenCreate(BaseModel):\n    user_id: str\n    access_token: str\n    refresh_token: str\n    status: bool\n    created_date: datetime.datetime\nclass List(BaseModel):\n    page: int\n    size: int\nclass AuthorRes(BaseModel):",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class List(BaseModel):\n    page: int\n    size: int\nclass AuthorRes(BaseModel):\n    author_name: str\n    books: list",
+        "detail": "schemas",
+        "documentation": {}
+    },
+    {
+        "label": "AuthorRes",
+        "kind": 6,
+        "importPath": "schemas",
+        "description": "schemas",
+        "peekOfCode": "class AuthorRes(BaseModel):\n    author_name: str\n    books: list",
         "detail": "schemas",
         "documentation": {}
     },

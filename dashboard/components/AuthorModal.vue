@@ -12,7 +12,8 @@
       </b-form-group>
       <b-form-group label="Books" label-for="name-input">
         <b-table 
-          striped hover 
+          striped 
+          hover 
           :items="items" 
           :busy="isBusy" 
           select-mode="single" 
@@ -33,11 +34,25 @@
   
 <script>
 export default {
+  name: 'AuthorModal',
+  props: {
+    author: {
+      type: Number,
+      default: -1
+    },
+  },
   data() {
     return {
+      isBusy: false,
       name: '',
       nameState: null,
-      submittedNames: []
+      submittedNames: [],
+      items: [
+        { age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
+        { age: 21, first_name: 'Larsen', last_name: 'Shaw' },
+        { age: 89, first_name: 'Geneva', last_name: 'Wilson' },
+        { age: 38, first_name: 'Jami', last_name: 'Carney' }
+      ]
     }
   },
   methods: {
@@ -67,6 +82,9 @@ export default {
       this.$nextTick(() => {
         this.$bvModal.hide('modal-prevent-closing')
       })
+    },
+    onRowSelected() {
+      
     }
   }
 }

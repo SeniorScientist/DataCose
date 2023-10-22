@@ -28,7 +28,13 @@ export default {
     css: [],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [],
+    plugins: [
+        {
+            src: '~/plugins/axios.js',
+            mode: 'client',
+            ssr: false
+        }
+    ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -58,11 +64,18 @@ export default {
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
         // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-        baseURL: process.env.NODE_ENV == 'development' ? 'http://127.0.0.1:8000' : process.env.BASEURL,
+        baseURL: process.env.NODE_ENV === 'development' ? 'http://127.0.0.1:8000' : process.env.BASEURL,
     },
 
     router: {
         middleware: ['auth']
+    },
+
+    watchers: {
+        webpack: {
+            poll: 1000,
+            ignored: /node_modules/
+        }
     },
 
     toast: {
@@ -89,12 +102,12 @@ export default {
     auth: {
         strategies: {
             local: {
-                scheme: 'refresh',
+                // scheme: 'refresh',
                 autoLogout: true,
                 token: {
                     property: 'access_token',
-                    maxAge: 1800,
-                    global: true,
+                    maxAge: 31536000,
+                    required: true,
                     type: 'Bearer'
                 },
                 property: 'refresh_token',
@@ -112,11 +125,7 @@ export default {
                     logout: { url: '/auth/logout', method: 'post', },
                     user: false,
                 },
-                user: {
-                    property: false
-                },
                 autoFetchUser: false,
-                tokenRequired: true,
             }
         },
         // redirect: {
@@ -127,6 +136,11 @@ export default {
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
-        transpile: ['@nuxtjs/auth-next']
+        transpile: ['@nuxtjs/auth-next'],
+        extend(config, ctx) {
+            if (ctx.isDev) {
+                config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+            }
+        }
     },
 };

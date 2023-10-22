@@ -13,12 +13,6 @@ class UserLogin(BaseModel):
     password: str = Field(..., min_length=5, max_length=24, description="user password")
 
 
-class LoginRes(BaseModel):
-    access_token: str
-    refresh_token: str
-    token_type: str
-
-
 class TokenSchema(BaseModel):
     access_token: str
     refresh_token: str
@@ -33,10 +27,5 @@ class TokenCreate(BaseModel):
 
 
 class List(BaseModel):
-    page: int
-    size: int
-
-
-class AuthorRes(BaseModel):
-    author_name: str
-    books: list
+    item_count: int
+    page_number: int

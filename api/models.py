@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
 from database import Base
 import datetime
 
@@ -22,14 +23,18 @@ class Token(Base):
 
 class Author(Base):
     __tablename__ = "author"
-    id = Column(Integer, primary_key=True)
-    author_name = Column(String(64), nullable=False)
+    id = Column(Integer, primary_key=True, index=True)
+    author_name = Column(String(64), index=True, nullable=False)
     email = Column(String(128), unique=True, nullable=False)
+
+    books = relationship("Book", back_populates="author")
 
 
 class Book(Base):
     __tablename__ = "book"
-    id = Column(Integer, primary_key=True)
-    book_name = Column(String(128), unique=True, nullable=False)
+    id = Column(Integer, primary_key=True, index=True)
+    book_name = Column(String(128), unique=True, index=True, nullable=False)
     page_number = Column(Integer, nullable=False)
-    author_name = Column(Integer, , nullable=False)
+    author_id = Column(Integer, ForeignKey("author.id"), nullable=False)
+
+    author = relationship("Author", back_populates="books")
